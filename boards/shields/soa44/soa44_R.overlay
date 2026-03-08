@@ -30,7 +30,7 @@
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_snap>,
-                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
+                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
                 <&zip_scroll_scaler 2 7>; // スクロール速度を遅くする(2/5→2/7)
         };
     };
