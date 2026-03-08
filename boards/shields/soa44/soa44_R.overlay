@@ -23,13 +23,15 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 1 700>;
+        input-processors = <&zip_temp_layer 1 10000>; // 1(0から数えるので2番目)レイヤーに移動し、10000ms(=10秒)でAML抜ける
 
         scroller {
             layers = <5>;
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_scaler 2 5>;
+                <&zip_scroll_snap>,
+                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
+                <&zip_scroll_scaler 2 7>; // スクロール速度を遅くする(2/5→2/7)
         };
     };
 };
