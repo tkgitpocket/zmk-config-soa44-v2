@@ -29,7 +29,9 @@
             layers = <5>;
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_scaler 2 5>;
+                <&zip_scroll_snap>,
+                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
+                <&zip_scroll_scaler 2 7>; // スクロール速度を遅くする(5→7)
         };
     };
 };
