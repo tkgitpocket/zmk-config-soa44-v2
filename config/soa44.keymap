@@ -3,25 +3,27 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// Layer definitions
+
+#define DEFAULT_L		0
+#define WINDOWS_L		1
+#define MAC_L			2
+#define IOS_L			3
+#define LINUX_L			4
+#define LEFT_L	 		5
+#define RIGHT_L			6
+#define CONFIG_L		7
+#define TRACKBALL_L		8
+#define TRACKBALL_L2	9
+#define SCROLL_L		10
+#define CENTER_L		11
+#define CENTER2_L		12
+#define EXT1_L			13
+#define BT_L			14
+
 // ZMK Layout Shift モジュール(https://github.com/kot149/zmk-layout-shift/blob/v1/README_ja.md)を使う
 // &kpをオーバーライド
 #include <layout_shift_kp_override.dtsi>
-
-// KeymapEditor対策で&kpを定義しておく
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-                &kp EQUAL      // 通常は = を出力するが、JISレイアウトでは _ (JISレイアウトでの = に対応)を出力する
-                &tog_ls        // レイアウトシフトのオン/オフを切り替え
-                &tog_ls_on     // レイアウトシフトをオンにする
-                &tog_ls_off    // レイアウトシフトをオフにする
-            >;
-        };
-    };
-};
 
 &mt {
     flavor = "balanced";
@@ -56,6 +58,55 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+        mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <6 7>;
+        };
+
+        mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <7 8>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <18 19>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <19 20>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <20 21>;
+        };
+
+        comma {
+            bindings = <&kp COMMA>;
+            key-positions = <30 31>;
+        };
+
+        dot {
+            bindings = <&kp DOT>;
+            key-positions = <31 32>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <17 18>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <29 30>;
+        };
+
+        mb3 {
+            bindings = <&mkp MCLK>;
+            key-positions = <6 8 7>;
+        };
     };
 
     macros {
@@ -65,9 +116,81 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        // Disconnect from all once for reliable connection to selected profile.
+        // ZMK automatically reconnects to current profile right after disconnection.
+
+        out_bt_nxt: out_bt_nxt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_NXT &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+        };
+
+        // Select specific BT device (0-4) and disconnect others
+
+        out_bt_0: out_bt_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+        };
+
+        out_bt_1: out_bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+        };
+
+        out_bt_2: out_bt_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4>;
+        };
+
+        out_bt_3: out_bt_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>;
+        };
+
+        out_bt_4: out_bt_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&out OUT_BLE &bt BT_SEL 4 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3>;
+        };
+
+        // Change default layer for current profile to next layer
+
+        dfnxt: dfnxt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&df DF_INC &animtrig ANM_TRG 2>;
+        };
     };
 
     behaviors {
+        // for ZMK Layout Shiftモジュール-S
+        // KeymapEditor対策で&kpを定義しておく
+        // Keep the original key_press behavior for ZMK core components
+        original_key_press: original_key_press {
+            compatible = "zmk,behavior-key-press";
+            #binding-cells = <1>;
+            label = "KEY_PRESS";
+        };
+
+        // Override the existing &kp behavior to use our custom implementation
+        kp: key_press {
+            compatible = "zmk,behavior-layout-shift-key-press";
+            #binding-cells = <1>;
+            label = "LAYOUT_SHIFT_KEY_PRESS";
+        };
+        // for ZMK Layout Shiftモジュール-ENTER
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -86,7 +209,7 @@
 &kp ESCAPE      &kp Q         &kp W         &kp E         &kp R        &kp T             &kp Y             &kp U        &kp I  &kp O      &kp P         &kp BACKSPACE
 &mt LCTRL TAB   &kp A         &kp S         &kp D         &kp F        &kp G             &kp H             &kp J        &kp K  &kp L      &lt 5 MINUS   &kp EQUAL
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V        &kp B             &kp SQT           &kp N        &kp M  &kp COMMA  &kp DOT       &kp SLASH
-                &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 INT_HENKAN  &lt 3 SPACE  &lt 2 INT_MUHENKAN  &lt 3 BACKSPACE  &lt 2 ENTER                    &kp QUESTION
+                &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_HENKAN  &lt 4 SPACE  &lt 3 INT_MUHENKAN  &lt 3 BACKSPACE  &lt 2 ENTER                    &kp QUESTION
             >;
         };
 
@@ -119,7 +242,7 @@
 
         ARROW {
             bindings = <
-&trans  &trans  &trans    &kp UP    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &kp UP    &mo 6      &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans    &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans    &trans    &trans     &trans  &trans  &trans                  &trans
@@ -137,7 +260,7 @@
 
         Bluetooth {
             bindings = <
-&trans  &trans        &trans        &trans        &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans
+&trans  &trans        &trans        &trans        &trans  &trans  &out_bt_0     &out_bt_1     &out_bt_2     &out_bt_3     &out_bt_4       &trans
 &trans  &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans        &trans          &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans  &bootloader   &trans        &trans        &trans        &trans          &bt BT_CLR
         &trans        &trans        &trans        &trans  &trans  &trans        &trans                                    &bt BT_CLR_ALL
