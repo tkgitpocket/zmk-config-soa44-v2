@@ -1,6 +1,7 @@
 #include "soa44.dtsi"
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/input/input-event-codes.h>
+#include <scroll-snap.dtsi> // スクロールスナップ ZMK Scroll Snap Module(https://github.com/kot149/zmk-scroll-snap)を使う
 #include <input/processors.dtsi>
 
 &default_transform {
