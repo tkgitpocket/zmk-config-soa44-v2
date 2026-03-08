@@ -47,10 +47,3 @@ Bluetooth接続状態を色で表示：
 ## キーマップ
 
 ![キーマップ](keymap-drawer/soa44.svg)
-
-### カスタマイズメモ
-
-- (ZMK Layout Shift モジュール)[https://github.com/kot149/zmk-layout-shift/blob/v1/README_ja.md] 組み込み
-- (ZMK Scroll Snap Module)[https://github.com/kot149/zmk-scroll-snap] 組み込み
-
-- スクロールをWindowsと同じ方向にする（デフォルトから上下逆にする）

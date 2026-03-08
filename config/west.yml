@@ -8,12 +8,10 @@ manifest:
       url-base: https://github.com/gohanda11
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: kot149
-      url-base: https://github.com/kot149
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3-branch
+      revision: main
       import: app/west.yml
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
@@ -24,11 +22,5 @@ manifest:
     - name: zmk-ws2812-driver
       remote: gohanda11
       revision: main
-    - name: zmk-scroll-snap
-      remote: kot149
-      revision: v1
-    - name: zmk-layout-shift
-      remote: kot149
-      revision: v1
   self:
     path: config
