@@ -207,46 +207,46 @@
 
         default {
             bindings = <
-&kp ESCAPE      &kp Q         &kp W         &kp E             &kp R        &kp T               &kp Y            &kp U        &kp I  &kp O      &kp P         &kp BACKSPACE
-&mt LCTRL TAB   &kp A         &kp S         &kp D             &kp F        &kp G               &kp H            &kp J        &kp K  &kp L      &lt 5 MINUS   &kp EQUAL
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C             &kp V        &kp B               &kp SQT          &kp N        &kp M  &kp COMMA  &kp DOT       &kp SLASH
-                &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_HENKAN  &lt 4 SPACE  &lt 3 INT_MUHENKAN  &lt 3 BACKSPACE  &lt 2 ENTER                    &kp QUESTION
+&kp ESCAPE      &kp Q         &kp W         &kp E             &kp R        &kp T                  &kp Y            &kp U        &kp I  &kp O      &kp P         &kp BACKSPACE
+&mt LCTRL TAB   &kp A         &kp S         &kp D             &kp F        &kp G                  &kp H            &kp J        &kp K  &kp L      &lt 5 MINUS   &kp EQUAL
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C             &kp V        &kp B                  &kp SQT          &kp N        &mkp LCLK         &mkp RCLK     &kp SLASH
+                &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_HENKAN  &lt 4 SPACE  &lt 3 INT_MUHENKAN     &kp BACKSPACE    &kp ENTER                      &kp QUESTION
             >;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans    &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1      &mkp MB3       &mkp MB2  &lt 5 MINUS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &trans    &trans       &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans                                 &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &mkp MB4  &mkp MB3   &mkp MB5   &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans    &mkp LCLK  &mkp RCLK  &mo 5      &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans    &trans     &mkp LCLK  &mkp RCLK  &trans
+        &trans  &trans  &trans  &trans  &trans       &trans  &trans                          &trans
             >;
         };
 
         FUNCTION {
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp F1           &kp F2       &kp F3    &kp F4      &kp F5       &trans     &kp UP         &trans        &trans                &trans                 &trans
-&trans  &kp F6           &kp F7       &kp F8    &kp F9      &kp F10      &trans     &kp LEFT       &kp DOWN      &kp RIGHT             &trans                 &trans
-        &kp F11          &kp F12      &trans    &trans      &trans       &trans     &trans                                             &trans
+&kp EXCL  &kp EXCLAMATION     &kp DQUOTE     &kp HASH         &kp DOLLAR     &kp PERCENT      &kp AMPERSAND     &kp QUOTE      &kp LPAREN       &kp RPAREN       &kp PIPE          &kp RBKT
+&trans    &kp LCTRL           &kp SEMICOLON  &kp COLON        &kp LBRACE     &kp RBRACE       &kp CARET         &kp AT         &kp LBRACKET     &kp RBRACKET     &kp EQUAL         &kp BACKSLASH
+&trans    &mt LEFT_SHIFT TAB  &kp PLUS       &kp ASTERISK     &kp TILDE      &kp PRINTSCREEN  &kp PLUS          &kp SEMICOLON  &kp COLON        &kp LESS_THAN    &kp GREATER_THAN  &kp TILDE
+          &trans              &trans         &trans           &trans         &trans           &kp LCTRL         &kp ENTER                                        &trans
             >;
         };
 
         NUM {
             bindings = <
-&trans  &kp N1            &kp N2             &kp N3          &kp N4           &kp N5         &kp N6  &kp N7  &kp N8  &kp N9  &kp N0      &kp SLASH
-&trans  &trans            &trans             &trans          &trans           &kp BACKSLASH  &trans  &kp N4  &kp N5  &kp N6  &kp MINUS   &kp ASTERISK
-&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE       &trans  &kp N0  &kp N1  &kp N2  &kp N3      &kp PLUS
-        &trans            &trans             &trans          &trans           &trans         &trans  &trans                  &kp PERIOD
+&kp NUMBER_1  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8     &kp NUMBER_9  &kp NUMBER_0       &kp N0
+&trans        &none         &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6            &kp F7        &kp F8           &kp F9        &kp UNDERSCORE     &trans
+&trans        &trans        &trans        &trans        &trans        &trans                  &kp BACKQUOTE     &kp PLUS      &kp ASTERISK     &kp COMMA     &kp PERIOD         &kp SLASH
+              &trans        &trans        &trans        &trans        &trans                  &trans            &trans                                       &trans
             >;
         };
 
         ARROW {
             bindings = <
-&trans  &trans  &trans    &kp UP    &mo 6      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans    &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans    &trans    &trans     &trans  &trans  &trans                  &trans
+&trans          &kp TAB    &kp LEFT_ALT  &kp END    &lt 6    SPACE    &kp PRINTSCREEN         &kp LC(Y)      &mkp MB4        &mkp MB3  &mkp MB5   &kp UP_ARROW  &kp PAGE_UP
+&trans          &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW   &kp LEFT_SHIFT          &kp BACKSPACE  &none           &none     &mkp LCLK  &mkp RCLK     &kp PAGE_DOWN
+&kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)         &kp LEFT_ARROW          &kp PAGE_DOWN  &kp DOWN_ARROW  &trans    &mkp LCLK  &mkp RCLK     &kp ENTER
+                &trans     &trans        &trans     &trans            &trans                  &kp RCTRL      &trans                               &trans
             >;
         };
 
