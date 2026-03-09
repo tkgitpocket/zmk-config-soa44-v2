@@ -165,13 +165,6 @@
             bindings = <&out OUT_BLE &bt BT_SEL 4 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3>;
         };
 
-        // Change default layer for current profile to next layer
-
-        dfnxt: dfnxt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&df DF_INC &animtrig ANM_TRG 2>;
-        };
     };
 
     behaviors {
