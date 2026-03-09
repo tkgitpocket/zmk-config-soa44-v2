@@ -225,7 +225,7 @@
 
         FUNCTION {
             bindings = <
-&kp EXCL  &kp EXCLAMATION     &kp DQUOTE     &kp HASH         &kp DOLLAR     &kp PERCENT      &kp AMPERSAND     &kp QUOTE      &kp LPAREN       &kp RPAREN       &kp PIPE          &kp RBKT
+&kp EXCL  &kp EXCLAMATION     &kp DQT        &kp HASH         &kp DOLLAR     &kp PERCENT      &kp AMPS         &kp SQT        &kp LPAREN       &kp RPAREN       &kp PIPE          &kp RBKT
 &trans    &kp LCTRL           &kp SEMICOLON  &kp COLON        &kp LBRACE     &kp RBRACE       &kp CARET         &kp AT         &kp LBRACKET     &kp RBRACKET     &kp EQUAL         &kp BACKSLASH
 &trans    &mt LEFT_SHIFT TAB  &kp PLUS       &kp ASTERISK     &kp TILDE      &kp PRINTSCREEN  &kp PLUS          &kp SEMICOLON  &kp COLON        &kp LESS_THAN    &kp GREATER_THAN  &kp TILDE
           &trans              &trans         &trans           &trans         &trans           &kp LCTRL         &kp ENTER                                        &trans
