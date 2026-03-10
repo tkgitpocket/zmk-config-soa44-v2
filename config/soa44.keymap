@@ -224,7 +224,7 @@
         default {
             bindings = <
 &kp ESCAPE      &kp Q         &kp W         &kp E                  &kp R               &kp T                              &kp Y          &kp U      &kp I  &kp O        &kp P                &kp BACKSPACE
-&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                              &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS   &kp EQUAL
+&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                              &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS   &kp ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                              &kp JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK            &kp SLASH
                 &kp LEFT_WIN  &kp LEFT_ALT  &lt LEFT_L INT_HENKAN  &lt CENTER_L SPACE  &lt RIGHT_L INT_MUHENKAN           &kp BACKSPACE  &kp ENTER                      &kp QUESTION
             >;
