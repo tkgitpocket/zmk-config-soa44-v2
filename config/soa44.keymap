@@ -265,14 +265,13 @@
             display-name = "Left SPACE";
 
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            // |  ESC    |  !  |  @  |  #       |  $  |  %       |                           |  ^  |  &      |  *      |  (  |  )  |  ]  |
-            // |         |  1  |  2  |  3       |  4  |  5       |                           |  6  |  7      |  8      |  9  |  0  |  \  |
+            // |  ESC    |  !  |  @  |  #       |  $  |  %       |                           |  ^  |  &      |  *      |  (  |  )  |  \  |
             // |         |     |     |          |     |          |                           |  `  |  -      |  =      |  [  |  ]  |SHIFT|
             //           |     |     |          |     |          |                           |     |         |         |     |
 
             bindings = <
-&kp EXCL  &kp EXCLAMATION     &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT              &kp JP_AMPERSAND  &kp JP_QUOTE   &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE       &kp JP_BSLH
-&trans    &kp LCTRL           &kp SEMICOLON  &kp JP_COLON     &kp JP_LBRACE  &kp JP_RBRACE            &kp JP_CARET      &kp JP_AT      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL      &kp NON_US_BACKSLASH
+&trans    &kp EXCLAMATION     &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT              &kp JP_AMPERSAND  &kp JP_QUOTE   &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE       &kp JP_BSLH
+&trans    &kp LCTRL           &kp SEMICOLON  &kp JP_COLON     &kp JP_LBRACE  &kp JP_RBRACE            &kp JP_CARET      &kp JP_AT      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL      &kp JP_EQUAL
 &trans    &mt LEFT_SHIFT TAB  &kp JP_PLUS    &kp JP_ASTERISK  &kp JP_TILDE   &kp PRINTSCREEN          &kp JP_CARET      &kp SEMICOLON  &kp JP_COLON     &kp LESS_THAN    &kp GREATER_THAN  &kp JP_TILDE
           &trans              &trans         &trans           &trans         &trans                   &kp LCTRL         &trans                                           &trans
             >;
