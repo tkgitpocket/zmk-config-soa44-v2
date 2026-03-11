@@ -225,7 +225,7 @@
         default {
             bindings = <
 &kp ESCAPE      &kp Q         &kp W         &kp E                  &kp R               &kp T                     &kp Y          &kp U      &kp I  &kp O        &kp P               &kp JP_YEN
-&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                     &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS  &kp ENTER
+&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                     &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS  &kp JP_UNDERSCORE
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                     &kp JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK           &kp SLASH
                 &kp LEFT_WIN  &kp LEFT_ALT  &lt LEFT_L INT_HENKAN  &lt CENTER_L SPACE  &lt RIGHT_L INT_MUHENKAN  &kp BACKSPACE  &kp ENTER                      &kp QUESTION
             >;
@@ -273,7 +273,7 @@
             bindings = <
 &kp EXCL  &kp EXCLAMATION     &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT              &kp JP_AMPERSAND  &kp JP_QUOTE   &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE       &kp JP_BSLH
 &trans    &kp LCTRL           &kp SEMICOLON  &kp JP_COLON     &kp JP_LBRACE  &kp JP_RBRACE            &kp JP_CARET      &kp JP_AT      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL      &kp NON_US_BACKSLASH
-&trans    &mt LEFT_SHIFT TAB  &kp JP_PLUS    &kp JP_ASTERISK  &kp JP_TILDE   &kp PRINTSCREEN          &kp JP_BSLH       &kp SEMICOLON  &kp JP_COLON     &kp LESS_THAN    &kp GREATER_THAN  &kp JP_TILDE
+&trans    &mt LEFT_SHIFT TAB  &kp JP_PLUS    &kp JP_ASTERISK  &kp JP_TILDE   &kp PRINTSCREEN          &kp JP_CARET      &kp SEMICOLON  &kp JP_COLON     &kp LESS_THAN    &kp GREATER_THAN  &kp JP_TILDE
           &trans              &trans         &trans           &trans         &trans                   &kp LCTRL         &trans                                           &trans
             >;
         };
