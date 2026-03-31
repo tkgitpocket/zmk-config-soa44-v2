@@ -58,27 +58,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <12 13>;
+            key-positions = <14 15>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <13 14>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp JP_DQUOTE>;
-            key-positions = <2 3>;
-        };
-
-        eq {
-            bindings = <&kp JP_EQUAL>;
-            key-positions = <22 23>;
+            key-positions = <15 16>;
         };
 
         mb4 {
@@ -99,11 +84,6 @@
         colon {
             bindings = <&kp JP_COLON>;
             key-positions = <20 21>;
-        };
-
-        underscore {
-            bindings = <&kp JP_UNDERSCORE>;
-            key-positions = <35 23>;
         };
 
         comma {
@@ -129,6 +109,16 @@
         mb3 {
             bindings = <&mkp MCLK>;
             key-positions = <8 7 9>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+        };
+
+        lctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <13 14>;
         };
     };
 
@@ -226,7 +216,7 @@
             bindings = <
 &kp ESCAPE      &kp Q         &kp W         &kp E                  &kp R               &kp T                     &kp Y          &kp U      &kp I  &kp O        &kp P               &kp JP_YEN
 &mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                     &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS  &kp JP_UNDERSCORE
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                     &kp JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK           &kp SLASH
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                     &kp JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK           &mt RIGHT_SHIFT SLASH
                 &kp LEFT_WIN  &kp LEFT_ALT  &lt LEFT_L INT_HENKAN  &lt CENTER_L SPACE  &lt RIGHT_L INT_MUHENKAN  &kp BACKSPACE  &kp ENTER                      &kp QUESTION
             >;
         };
@@ -234,10 +224,10 @@
         windows_default_layer {
             display-name = "Windows Default";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                       &trans  &trans                  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans
             >;
         };
 
@@ -254,10 +244,10 @@
         ios_default_layer {
             display-name = "iOS Default";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                       &trans  &trans                  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans
             >;
         };
 
@@ -270,69 +260,69 @@
             //           |     |     |          |     |          |                           |     |         |         |     |
 
             bindings = <
-&trans    &kp EXCLAMATION     &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT              &kp JP_AMPERSAND  &kp JP_QUOTE   &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE       &kp JP_BSLH
-&trans    &kp LCTRL           &kp SEMICOLON  &kp JP_COLON     &kp JP_LBRACE  &kp JP_RBRACE            &kp JP_CARET      &kp JP_AT      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL      &kp JP_EQUAL
-&trans    &mt LEFT_SHIFT TAB  &kp JP_PLUS    &kp JP_ASTERISK  &kp JP_TILDE   &kp PRINTSCREEN          &kp JP_CARET      &kp SEMICOLON  &kp JP_COLON     &kp LESS_THAN    &kp GREATER_THAN  &kp JP_TILDE
-          &trans              &trans         &trans           &trans         &trans                   &kp LCTRL         &trans                                           &trans
+&trans  &kp EXCLAMATION     &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT      &kp JP_AMPERSAND  &kp JP_QUOTE   &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE       &kp JP_BSLH
+&trans  &kp LCTRL           &kp SEMICOLON  &kp JP_COLON     &kp JP_LBRACE  &kp JP_RBRACE    &kp JP_CARET      &kp JP_AT      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL      &kp JP_EQUAL
+&trans  &mt LEFT_SHIFT TAB  &kp JP_PLUS    &kp JP_ASTERISK  &kp JP_TILDE   &kp PRINTSCREEN  &kp JP_CARET      &kp SEMICOLON  &kp JP_COLON     &kp LESS_THAN    &kp GREATER_THAN  &kp JP_TILDE
+        &trans              &trans         &trans           &trans         &trans           &kp LCTRL         &trans                                           &trans
             >;
         };
 
         right_layer {
             display-name = "Right SPACE";
             bindings = <
-&kp NUMBER_1  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8     &kp NUMBER_9  &kp NUMBER_0       &kp N0
-&trans        &none         &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6            &kp F7        &kp F8           &kp F9        &kp JP_UNDERSCORE  &trans
-&trans        &trans        &trans        &trans        &trans        &trans                  &kp JP_BACKQUOTE  &kp JP_PLUS   &kp JP_ASTERISK  &kp COMMA     &kp PERIOD         &kp SLASH
-              &trans        &trans        &trans        &trans        &trans                  &trans            &trans                                       &trans
+&kp NUMBER_1  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8     &kp NUMBER_9  &kp NUMBER_0       &kp N0
+&trans        &none         &kp F2        &kp F3        &kp F4        &kp F5        &kp F6            &kp F7        &kp F8           &kp F9        &kp JP_UNDERSCORE  &trans
+&trans        &trans        &trans        &trans        &trans        &trans        &kp JP_BACKQUOTE  &kp JP_PLUS   &kp JP_ASTERISK  &kp COMMA     &kp PERIOD         &kp SLASH
+              &trans        &trans        &trans        &trans        &trans        &trans            &trans                                       &trans
             >;
         };
 
         trackball_layer {
             display-name = "Trackball Automouse";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &mkp MB4  &mkp MB3   &mkp MB5   &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans    &mkp LCLK  &mkp RCLK  &mo SCROLL_L  &mo SCROLL_L
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans    &trans     &mkp LCLK  &mkp RCLK     &trans
-        &trans  &trans  &trans  &trans  &trans                   &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB3   &mkp MB5   &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &mo SCROLL_L  &mo SCROLL_L
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &mkp LCLK  &mkp RCLK     &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
             >;
         };
 
         scroll_layer {
             display-name = "Trackball Scroll";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                   &trans  &trans                  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans
             >;
         };
 
         center_layer {
             display-name = "Center SPACE";
             bindings = <
-&trans          &kp TAB    &kp LEFT_ALT  &kp END    &lt BT_L SPACE   &kp PRINTSCREEN                   &kp LC(Y)      &mkp MB4        &mkp MB3  &mkp MB5   &kp UP_ARROW  &kp PAGE_UP
-&trans          &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT                    &kp BACKSPACE  &none           &none     &mkp LCLK  &mkp RCLK     &kp PAGE_DOWN
-&kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW                    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans    &mkp LCLK  &mkp RCLK     &kp ENTER
-                &trans     &trans        &trans     &trans           &trans                            &kp RCTRL      &trans                               &trans
+&trans          &kp TAB    &kp LEFT_ALT  &kp END    &lt BT_L SPACE   &kp PRINTSCREEN  &kp LC(Y)      &mkp MB4        &mkp MB3  &mkp MB5   &kp UP_ARROW  &kp PAGE_UP
+&trans          &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT   &kp BACKSPACE  &none           &none     &mkp LCLK  &mkp RCLK     &kp PAGE_DOWN
+&kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW   &kp PAGE_DOWN  &kp DOWN_ARROW  &trans    &mkp LCLK  &mkp RCLK     &kp ENTER
+                &trans     &trans        &trans     &trans           &trans           &kp RCTRL      &trans                               &trans
             >;
         };
 
         center2_layer {
             display-name = "Center SPACE(mac)";
             bindings = <
-&trans          &kp TAB    &kp LEFT_ALT  &kp END    &lt BT_L SPACE   &kp PRINTSCREEN                   &kp LC(Y)      &mkp MB4        &mkp MB3  &mkp MB5   &kp UP_ARROW  &kp PAGE_UP
-&trans          &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT                    &kp BACKSPACE  &none           &none     &mkp LCLK  &mkp RCLK     &kp PAGE_DOWN
-&kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW                    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans    &mkp LCLK  &mkp RCLK     &kp ENTER
-                &trans     &trans        &trans     &trans           &trans                            &kp RCTRL      &trans                               &trans
+&trans          &kp TAB    &kp LEFT_ALT  &kp END    &lt BT_L SPACE   &kp PRINTSCREEN  &kp LC(Y)      &mkp MB4        &mkp MB3  &mkp MB5   &kp UP_ARROW  &kp PAGE_UP
+&trans          &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT   &kp BACKSPACE  &none           &none     &mkp LCLK  &mkp RCLK     &kp PAGE_DOWN
+&kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW   &kp PAGE_DOWN  &kp DOWN_ARROW  &trans    &mkp LCLK  &mkp RCLK     &kp ENTER
+                &trans     &trans        &trans     &trans           &trans           &kp RCTRL      &trans                               &trans
             >;
         };
 
         Bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &out_bt_0    &out_bt_1  &out_bt_2  &out_bt_3  &out_bt_4       &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans       &trans     &trans     &trans     &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &bootloader  &trans     &trans     &trans     &trans          &bt BT_CLR
-        &trans  &trans  &trans  &trans  &trans                   &trans       &trans                           &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans  &out_bt_0           &out_bt_1  &out_bt_2  &out_bt_3  &out_bt_4       &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans              &trans     &trans     &trans     &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp RC(RA(DELETE))  &trans     &trans     &trans     &trans          &bt BT_CLR
+        &trans  &trans  &trans  &trans  &trans  &bootloader         &trans                           &bt BT_CLR_ALL
             >;
         };
     };
