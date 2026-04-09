@@ -115,11 +115,6 @@
             bindings = <&kp ESC>;
             key-positions = <1 2>;
         };
-
-        lctrl {
-            bindings = <&kp LCTRL>;
-            key-positions = <13 14>;
-        };
     };
 
     macros {
