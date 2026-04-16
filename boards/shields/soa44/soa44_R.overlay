@@ -30,7 +30,7 @@
         // カーソル遅くする
         slow_cursor {
             layers = <SLOWTRACKBALL_L>;
-            input-processors = <&zip_xy_scaler 1 5>;
+            input-processors = <&zip_xy_scaler 1 4>;
         };
 
         scroller {
@@ -48,6 +48,7 @@
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_snap>, // スクロールスナップ機能を入れる
+                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
                 <&zip_scroll_scaler 1 4>; // スクロール速度調整(Soa44では1/8)
         };
 
