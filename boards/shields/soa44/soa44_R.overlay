@@ -3,6 +3,7 @@
 #include <dt-bindings/input/input-event-codes.h>
 #include <scroll-snap.dtsi> // スクロールスナップ ZMK Scroll Snap Module(https://github.com/kot149/zmk-scroll-snap)を使う
 #include <input/processors.dtsi>
+#include "../../../config/layers.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -26,14 +27,33 @@
         device = <&trackball>;
 //        input-processors = <&zip_temp_layer 1 10000>; // 1(0から数えるので2番目)レイヤーに移動し、10000ms(=10秒)でAML抜ける
 
+        // カーソル遅くする
+        slow_cursor {
+            layers = <SLOWTRACKBALL_L>;
+            input-processors =
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 6>;
+        };
+
         scroller {
-            layers = <7>;
+            layers = <SCROLL_L>;
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_snap>, // スクロールスナップ機能を入れる
                 <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, // スクロール方向をWindowsに合わせる
                 <&zip_scroll_scaler 1 8>; // スクロール速度を遅くする(2/5→1/8)
         };
+
+        // 高速スクロール
+        fast_scroller {
+            layers = <FASTRSCROLL_L>;
+            input-processors =
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>, // スクロールスナップ機能を入れる
+                <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, // スクロール方向をWindowsに合わせる
+                <&zip_scroll_scaler 1 4>; // スクロール速度調整(Soa44では1/8)
+        };
+
     };
 };
 

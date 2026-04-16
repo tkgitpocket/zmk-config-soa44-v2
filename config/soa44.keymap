@@ -24,18 +24,7 @@
 #define JP_BSLH         INT1              // (backslash)
 
 // Layer definitions
-
-#define DEFAULT_L		0
-#define WINDOWS_L		1
-#define MAC_L			2
-#define IOS_L			3
-#define LEFT_L	 		4
-#define RIGHT_L			5
-#define TRACKBALL_L		6
-#define SCROLL_L		7
-#define CENTER_L		8
-#define CENTER2_L		9
-#define BT_L			10
+#include "layers.dtsi"
 
 // ZMK Layout Shift モジュール(https://github.com/kot149/zmk-layout-shift/blob/v1/README_ja.md)を使う
 // &kpをオーバーライド
@@ -209,10 +198,10 @@
 
         default {
             bindings = <
-&kp ESCAPE      &kp Q         &kp W         &kp E                  &kp R               &kp T                     &kp Y          &kp U      &kp I  &kp O        &kp P               &kp JP_YEN
-&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                     &kp H          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS  &kp JP_UNDERSCORE
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                     &kp JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK           &mt RIGHT_SHIFT SLASH
-                &kp LEFT_WIN  &kp LEFT_ALT  &lt LEFT_L INT_HENKAN  &lt CENTER_L SPACE  &lt RIGHT_L INT_MUHENKAN  &kp BACKSPACE  &kp ENTER                      &kp QUESTION
+&kp ESCAPE      &kp Q         &kp W         &kp E                  &kp R               &kp T                     &kp Y                          &kp U      &kp I  &kp O        &kp P               &kp JP_YEN
+&mt LCTRL TAB   &kp A         &kp S         &kp D                  &kp F               &kp G                     &kp H                          &kp J      &kp K  &mt LCTRL L  &lt SCROLL_L MINUS  &lt FASTRSCROLL_L JP_UNDERSCORE
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C                  &kp V               &kp B                     &lt SLOWTRACKBALL_L JP_TILDE   &kp N      &kp M  &mkp LCLK    &mkp RCLK           &mt RIGHT_SHIFT SLASH
+                &kp LEFT_WIN  &kp LEFT_ALT  &lt LEFT_L INT_HENKAN  &lt CENTER_L SPACE  &lt RIGHT_L INT_MUHENKAN  &kp BACKSPACE                  &kp ENTER                      &kp QUESTION
             >;
         };
 
@@ -276,11 +265,22 @@
             display-name = "Trackball Automouse";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB3   &mkp MB5   &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &mo SCROLL_L  &mo SCROLL_L
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &mo SCROLL_L  &mo FASTRSCROLL_L
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &mkp LCLK  &mkp RCLK     &trans
         &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
             >;
         };
+
+        slow_trackball_layer {
+            display-name = "Slow Trackball";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB3   &mkp MB5   &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &mo SCROLL_L  &mo FASTRSCROLL_L
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &mkp LCLK  &mkp RCLK     &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
+            >;
+        };
+
 
         scroll_layer {
             display-name = "Trackball Scroll";
@@ -291,6 +291,17 @@
         &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans
             >;
         };
+
+        fast_scroll_layer {
+            display-name = "Trackball Fast Scroll";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans
+            >;
+        };
+
 
         center_layer {
             display-name = "Center SPACE";
